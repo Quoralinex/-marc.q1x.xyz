@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://marc.q1x.xyz/sitemap.xml

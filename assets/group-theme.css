@@ -1,0 +1,61 @@
+/* Quoralinex group design tokens
+ * Source-of-truth theme variables for Q1X branding.
+ * Tokens are defined in light and dark modes to align with system preferences.
+ */
+:root {
+  color-scheme: light;
+  --qlx-bg-page: #f5f7fb;
+  --qlx-bg-surface: #ffffff;
+  --qlx-bg-surface-muted: #eef1f7;
+  --qlx-fg-default: #0f1a2a;
+  --qlx-fg-subtle: #4b5568;
+  --qlx-fg-on-contrast: #ffffff;
+  --qlx-accent-primary: #2f5bea;
+  --qlx-accent-strong: #1f3ea7;
+  --qlx-border-soft: #d7deea;
+  --qlx-border-strong: #b8c4d9;
+  --qlx-shadow-soft: 0 8px 24px rgba(15, 26, 42, 0.12);
+  --qlx-radius-lg: 18px;
+  --qlx-radius-md: 12px;
+  --qlx-radius-sm: 8px;
+  --qlx-spacing-xl: 32px;
+  --qlx-spacing-lg: 24px;
+  --qlx-spacing-md: 16px;
+  --qlx-spacing-sm: 12px;
+  --qlx-spacing-xs: 8px;
+  --qlx-font-sans: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --qlx-bg-page: #0b1020;
+    --qlx-bg-surface: #121a2e;
+    --qlx-bg-surface-muted: #19243a;
+    --qlx-fg-default: #e7ecf5;
+    --qlx-fg-subtle: #b8c4d9;
+    --qlx-fg-on-contrast: #0b1020;
+    --qlx-accent-primary: #7fa6ff;
+    --qlx-accent-strong: #5d7dd8;
+    --qlx-border-soft: #253556;
+    --qlx-border-strong: #33486d;
+    --qlx-shadow-soft: 0 12px 32px rgba(0, 0, 0, 0.35);
+  }
+}
+
+/* Extended tokens to support card backdrops and link focus treatments while
+ * keeping naming consistent with the group scheme.
+ */
+:root {
+  --qlx-surface-elevated: var(--qlx-bg-surface);
+  --qlx-surface-backdrop: rgba(15, 26, 42, 0.04);
+  --qlx-focus-ring: 0 0 0 3px rgba(47, 91, 234, 0.25);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --qlx-surface-elevated: #10192e;
+    --qlx-surface-backdrop: rgba(127, 166, 255, 0.08);
+    --qlx-focus-ring: 0 0 0 3px rgba(127, 166, 255, 0.35);
+  }
+}

@@ -1,0 +1,192 @@
+:root {
+  font-family: var(--qlx-font-sans);
+  background-color: var(--qlx-bg-page);
+  color: var(--qlx-fg-default);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 25% 25%, var(--qlx-bg-surface-muted), transparent 35%),
+    radial-gradient(circle at 80% 10%, var(--qlx-bg-surface-muted), transparent 30%),
+    radial-gradient(circle at 50% 80%, var(--qlx-surface-backdrop), transparent 45%),
+    var(--qlx-bg-page);
+  padding: var(--qlx-spacing-lg);
+}
+
+main {
+  width: min(960px, 100%);
+}
+
+.profile-card {
+  background: var(--qlx-surface-elevated);
+  border: 1px solid var(--qlx-border-soft);
+  box-shadow: var(--qlx-shadow-soft);
+  border-radius: var(--qlx-radius-lg);
+  overflow: hidden;
+  color: var(--qlx-fg-default);
+}
+
+.profile-header {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 1;
+  background: var(--qlx-bg-surface-muted);
+}
+
+.profile-header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.profile-body {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--qlx-spacing-lg);
+  padding: var(--qlx-spacing-xl);
+  background: linear-gradient(180deg, var(--qlx-surface-backdrop) 0%, var(--qlx-surface-backdrop) 100%);
+}
+
+.avatar-wrapper {
+  margin-top: calc(-1 * var(--qlx-spacing-xl));
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--qlx-bg-surface);
+  box-shadow: var(--qlx-shadow-soft);
+  background: var(--qlx-bg-surface);
+}
+
+.avatar-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--qlx-spacing-md);
+  justify-content: center;
+}
+
+.profile-content h1 {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: -0.02em;
+}
+
+.profile-content .title {
+  margin: 0;
+  color: var(--qlx-fg-subtle);
+  font-weight: 600;
+}
+
+.profile-content .location {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--qlx-spacing-xs);
+  padding: var(--qlx-spacing-xs) var(--qlx-spacing-sm);
+  background: var(--qlx-bg-surface-muted);
+  border-radius: var(--qlx-radius-sm);
+  border: 1px solid var(--qlx-border-soft);
+  color: var(--qlx-fg-default);
+  width: fit-content;
+}
+
+.profile-content .description {
+  margin: 0;
+  line-height: 1.6;
+  color: var(--qlx-fg-default);
+}
+
+.links {
+  display: flex;
+  gap: var(--qlx-spacing-sm);
+  flex-wrap: wrap;
+}
+
+.links a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--qlx-spacing-xs);
+  padding: var(--qlx-spacing-xs) var(--qlx-spacing-sm);
+  border-radius: var(--qlx-radius-sm);
+  border: 1px solid var(--qlx-border-soft);
+  background: var(--qlx-bg-surface);
+  color: var(--qlx-fg-default);
+  text-decoration: none;
+  transition: transform 150ms ease, box-shadow 150ms ease, border-color 150ms ease;
+}
+
+.links a:hover {
+  border-color: var(--qlx-border-strong);
+  box-shadow: var(--qlx-shadow-soft);
+  transform: translateY(-1px);
+}
+
+.links a:focus-visible {
+  outline: none;
+  box-shadow: var(--qlx-focus-ring);
+}
+
+.links img {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.footer {
+  padding: var(--qlx-spacing-lg) var(--qlx-spacing-xl);
+  border-top: 1px solid var(--qlx-border-soft);
+  background: var(--qlx-bg-surface);
+  color: var(--qlx-fg-subtle);
+  font-size: 0.95rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--qlx-spacing-sm);
+}
+
+.footer a {
+  color: var(--qlx-accent-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer a:hover {
+  color: var(--qlx-accent-strong);
+}
+
+@media (max-width: 720px) {
+  .profile-body {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .avatar-wrapper {
+    margin: calc(-1 * var(--qlx-spacing-xl)) auto 0;
+  }
+
+  .profile-content .location,
+  .links {
+    justify-content: center;
+  }
+
+  .footer {
+    justify-content: center;
+    text-align: center;
+  }
+}
