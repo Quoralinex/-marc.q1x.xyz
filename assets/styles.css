@@ -23,6 +23,40 @@ body {
 
 main {
   width: min(960px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: var(--qlx-spacing-lg);
+}
+
+.topbar {
+  display: flex;
+  justify-content: center;
+  padding: var(--qlx-spacing-md) 0;
+}
+
+.topbar__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--qlx-spacing-sm);
+  padding: var(--qlx-spacing-sm) var(--qlx-spacing-md);
+  border-radius: var(--qlx-radius-md);
+  background: var(--qlx-bg-surface);
+  border: 1px solid var(--qlx-border-soft);
+  box-shadow: var(--qlx-shadow-soft);
+  text-decoration: none;
+  color: inherit;
+}
+
+.topbar__mark {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+
+.topbar__wordmark {
+  height: 22px;
+  width: auto;
+  display: block;
 }
 
 .profile-card {
@@ -171,6 +205,23 @@ main {
 }
 
 @media (max-width: 720px) {
+  .topbar {
+    padding: var(--qlx-spacing-sm) 0;
+  }
+
+  .topbar__brand {
+    gap: var(--qlx-spacing-xs);
+    padding: var(--qlx-spacing-xs) var(--qlx-spacing-sm);
+  }
+
+  .topbar__mark {
+    height: 30px;
+  }
+
+  .topbar__wordmark {
+    height: 18px;
+  }
+
   .profile-body {
     grid-template-columns: 1fr;
     text-align: center;
